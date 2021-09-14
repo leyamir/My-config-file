@@ -1,7 +1,14 @@
-# Demo
+# Plugin use in this config
 
-Modify
+## Theme
+* dracula/vim                             
+## Language support
+* neoclide/coc.nvim                       
+* dense-analysis/ale                      
+* sheerun/vim-polyglot'
+# File manager
+* junegunn/fzf
+* junegunn/fzf.vim
+* airblade/vim-rooter
 
-## sub
-
-Now i also change here
+***This config file contains just enough plugin for quickly edit source code.***
