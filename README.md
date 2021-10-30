@@ -1,14 +1,3 @@
-# Plugin use in this config
+# About this config file
 
-## Theme
-* dracula/vim                             
-## Language support
-* neoclide/coc.nvim                       
-* dense-analysis/ale                      
-* sheerun/vim-polyglot'
-# File manager
-* junegunn/fzf
-* junegunn/fzf.vim
-* airblade/vim-rooter
-
-***This config file contains just enough plugin for quickly edit source code.***
+This config files are modified base on default config of Manjaro i3 edition 21.1.2
