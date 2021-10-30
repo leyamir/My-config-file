@@ -175,4 +175,3 @@ nnoremap <c-h> <c-w><c-h>
 " Copy and paste to/from system clipboard
 noremap <Leader>y "+y
 noremap <Leader>p "+p
-
