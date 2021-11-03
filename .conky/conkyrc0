@@ -5,7 +5,7 @@ conky.config = {
 	double_buffer = true,
 	no_buffers = true,
 	text_buffer_size = 2048,
-	alignment = 'top_middle',
+	alignment = 'top_left',
 	gap_x = -330,
 	gap_y = 130,
 	minimum_width = 50, minimum_height = 250,
