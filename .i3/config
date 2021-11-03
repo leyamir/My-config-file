@@ -46,8 +46,11 @@ bindsym $mod+a exec --no-startup-id ~/.config/rofi/launchers/colorful/launcher.s
 ##exec --no-startup-id volumeicon
 #bindsym $mod+Ctrl+a exec terminal -e 'alsamixer'
 exec --no-startup-id start-pulseaudio-x11
-exec --no-startup-id pa-applet
+#exec --no-startup-id pa-applet
 #bindsym $mod+Ctrl+m exec pavucontrol
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 1%+ unmute
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 1%- unmute
 
 ################################################################################################
 
@@ -277,7 +280,7 @@ bindsym $mod+9 exec --no-startup-id blurlock
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore; sleep 1; picom --experimental-backends
 #exec --no-startup-id manjaro-hello
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 #exec --no-startup-id pamac-tray
 # exec --no-startup-id clipit
@@ -288,7 +291,8 @@ exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xautolock -time 10 -locker blurlock
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
-#exec_always --no-startup-id "killall conky; conky -c ~/.conky/conkyrc1; conky -c ~/.conky/conkyrc2"
+exec_always --no-startup-id "killall conky;conky -c ~/.conky/conkyrc0; conky -c ~/.conky/conkyrc1; conky -c ~/.conky/conkyrc2"
+#exec_always --no-startup-id "killall conky; conky"
 
 
 # Color palette used for the terminal ( ~/.Xresources file )
@@ -324,13 +328,14 @@ exec_always --no-startup-id fix_xcursor
 
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
-	font pango:Fira Sans 17
+	font pango:Fira Sans 15
 	i3bar_command i3bar
 #	status_command /usr/bin/bumblebee-status -m battery cpu memory time -p interval=10 battery-upower.showremaining=false nic.format={ssid} cpu.format={:.01f}% memory.format={used} root.path=/ time.format="%I:%M " -t night-powerline
 	status_command i3status
 	position top
-	tray_padding 3
-	workspace_min_width 50
+	tray_padding 6
+	workspace_min_width 55
+	height 40
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 #    tray_output none

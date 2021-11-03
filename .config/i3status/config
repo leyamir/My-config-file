@@ -17,13 +17,13 @@ general {
 }
 
 #order += "disk /"
-order += "cpu_temperature 0"
-order += "cpu_usage"
 #order += "load"
 order += "memory"
-#order += "volume master"
-#order += "battery all"
-#order += "wireless _first_"
+order += "cpu_usage"
+order += "cpu_temperature 0"
+order += "wireless _first_"
+order += "volume master"
+order += "battery all"
 order += "tztime local"
 
 cpu_temperature 0 {
@@ -32,7 +32,7 @@ cpu_temperature 0 {
 }
 
 disk "/" {
-	format = " <span color='#f8f8f2'> %avail</span> "
+	format = "  <span color='#f8f8f2'> %avail</span>  "
 	#prefix_type	= custom 
 	#low_threshold = 10
 	#threshold_type = percentage_avail
@@ -44,7 +44,7 @@ cpu_usage {
 }
 
 load {
-        format = " <span color='#f8f8f2'> %1min</span> "
+        format = "  <span color='#f8f8f2'> %1min</span>  "
         #max_threshold = 0.3
 }
 
@@ -64,20 +64,20 @@ volume master {
 	device = "default"
 	mixer = "Master"
 	mixer_idx = 0
-	format = " <span color='#f8f8f2'>♪ %volume</span> "
+	format = "  <span color='#f8f8f2'>♪ %volume</span>  "
 	format_muted = "♪ muted (%volume)"
 }
 
 wireless _first_ {
 
-format_up = " <span color='#f8f8f2'> %essid%quality</span> "
+format_up = "  <span color='#f8f8f2'> %quality</span>  "
 format_down = "Disconnected"
 
 }
 
 battery all {
         # format = "%status %percentage %remaining %emptytime"
-        format = " <span color='#f8f8f2'>%status %percentage</span> "
+        format = "  <span color='#f8f8f2'>%status %percentage</span>  "
         format_down = "No battery"
         last_full_capacity = true
         integer_battery_capacity = true
@@ -99,6 +99,7 @@ battery all {
 tztime local {
         # format = "%Y-%m-%d %H:%M:%S"
 		format = "   %time  "
+		#format = "  %time  "
         format_time = "%I:%M"
 }
 
