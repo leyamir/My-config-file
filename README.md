@@ -2,6 +2,7 @@
 
 This config files are modified base on default config of Manjaro i3 edition 21.1.2
 
+- Color scheme: Dracula (https://draculatheme.com/contribute)
 - Font: Fira Sans, Fira Code, ZegeoLight-U
 - Terminal: kitty
 - App launcher: rofi
