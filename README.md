@@ -2,7 +2,7 @@
 
 This config files are modified base on default config of Manjaro i3 edition 21.1.2
 
-- Font: Fira Sans
+- Font: Fira Sans, Fira Code, ZegeoLight-U
 - Terminal: kitty
 - App launcher: rofi
 
