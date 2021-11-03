@@ -13,3 +13,5 @@ Display text in file ~/Note/todo.md and ~/Note/events.md
 ## Screenshot
 
 ![alt text](https://github.com/leyamir/My-config-file/blob/main/screenshot.png)
+
+![alt text](https://github.com/leyamir/My-config-file/blob/main/neofetch.png)
