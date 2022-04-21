@@ -1,18 +1,6 @@
 # About this config file
 
-This config files are modified base on default config of Manjaro i3 edition 21.1.2
+Follow instruction to install i3 [Youtube link](https://www.youtube.com/watch?v=sE3LHJ8lEss&t=339s)
+For rofi [github link](https://github.com/adi1090x/rofi)
+Font used: JetBrainsMono Nerd Font
 
-- Color scheme: Dracula (https://draculatheme.com/contribute)
-- Font: Fira Sans, Fira Code, ZegeoLight-U
-- Terminal: kitty
-- App launcher: rofi
-
-## Conky 
-
-Display text in file ~/Note/todo.md and ~/Note/events.md
-
-## Screenshot
-
-![alt text](https://github.com/leyamir/My-config-file/blob/main/screenshot.png)
-
-![alt text](https://github.com/leyamir/My-config-file/blob/main/neofetch.png)
