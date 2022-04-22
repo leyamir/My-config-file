@@ -152,7 +152,7 @@ bindsym $mod+Escape mode "$mode_system"
 set $mode_system (l)ock, (e)xit, (s)uspend, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id "i3lock -i ~/Pictures/lock.png"
-    bindsym s exec --no-startup-id "systemctl suppend"
+    bindsym s exec --no-startup-id "systemctl suspend"
     bindsym e exec --no-startup-id "i3-msg exit"
     bindsym r exec --no-startup-id "systemctl reboot"
     bindsym Shift+s exec --no-startup-id "systemctl poweroff"
