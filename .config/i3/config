@@ -141,14 +141,26 @@ bindsym $mod+Shift+0 move container to workspace $ws0; workspace $ws0
 # Switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
-# Lock screen
-bindsym $mod+Escape exec --no-startup-id i3lock -i ~/Pictures/lock.png 
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
+# Set shut down, restart and locking features
+bindsym $mod+Escape mode "$mode_system"
+set $mode_system (l)ock, (e)xit, (s)uspend, (r)eboot, (Shift+s)hutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id "i3lock -i ~/Pictures/lock.png"
+    bindsym s exec --no-startup-id "systemctl suppend"
+    bindsym e exec --no-startup-id "i3-msg exit"
+    bindsym r exec --no-startup-id "systemctl reboot"
+    bindsym Shift+s exec --no-startup-id "systemctl poweroff"
+
+    # exit system mode: "Enter" or "Escape"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -178,15 +190,15 @@ bar {
 	workspace_min_width 35
 	height 40
 	  colors {
-	    background #000000
-	    statusline #ABB2BF
-	    separator  #000000
+	        background #000000
+			statusline #A9B1D6
+			separator  #000000
 
-	    focused_workspace  #61AFEF #61AFEF #000000
-	    active_workspace   #000000 #000000 #ABB2BF
-	    inactive_workspace #000000 #000000 #ABB2BF
-	    urgent_workspace   #E06C75 #E06C75 #000000
-	    binding_mode       #E06C75 #E06C75 #000000
+			focused_workspace  #7AA2F7 #7AA2F7 #1A1B26
+			active_workspace   #000000 #000000 #7AA2F7
+			inactive_workspace #000000 #000000 #7AA2F7
+			urgent_workspace   #F7768E #F7768E #1A1B26
+			binding_mode       #F7768E #F7768E #1A1B26
 	}
 }
 
@@ -196,11 +208,11 @@ gaps outer -1
 
 # Color scheme
 # class                 border  bground text    indicator child_border
-client.focused          #ABB2BF #ABB2BF #000000 #ABB2BF   #ABB2BF
-client.focused_inactive #282C34 #282C34 #ABB2BF #282C34   #282C34
-client.unfocused        #000000 #000000 #ABB2BF #000000   #000000
-client.urgent           #E06C75 #E06C75 #000000 #E06C75   #E06C75
-client.placeholder      #000000 #000000 #ABB2BF #000000   #000000
+client.focused          #7AA2F7 #7AA2F7 #1A1B26 #7AA2F7   #7AA2F7
+client.focused_inactive #24283B #24283B #A9B1D6 #24283B   #24283B
+client.unfocused        #1A1B26 #1A1B26 #A9B1D6 #1A1B26   #1A1B26
+client.urgent           #F7768E #F7768E #1A1B26 #F7768E   #F7768E
+client.placeholder      #000000 #000000 #FFFFFF #000000   #000000
 
 client.background       #FFFFFF
 

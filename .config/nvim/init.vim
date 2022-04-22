@@ -39,7 +39,7 @@ endfunction
 " Plugging
 call plug#begin()
 
-	Plug 'ful1e5/onedark.nvim'
+	Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 	Plug 'nvim-lualine/lualine.nvim'
 	Plug 'kyazdani42/nvim-web-devicons'
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} 
@@ -56,9 +56,13 @@ call plug#end()
 
 
 " Neovim theme
-let g:onedark_function_style = "italic"
-let g:dark_float = 1
-colorscheme onedark
+" Example config in VimScript
+let g:tokyonight_style = "night"
+let g:tokyonight_italic_functions = 1
+let g:tokyonight_sidebars = [ "qf", "vista_kind", "terminal", "vim-plug" ]
+let g:tokyonight_hide_inactive_statusline = 1
+
+colorscheme tokyonight
 
 
 
@@ -67,17 +71,17 @@ lua << END
 local lualine = require('lualine')
 
 local colors = {
-  bg       = '#3d4148',
-  fg       = '#abb2bf',
-  yellow   = '#e5c075',
-  cyan     = '#56b6c2',
-  darkblue = '#61afef',
-  green    = '#98c379',
-  orange   = '#e5c075',
-  violet   = '#c678dd',
-  magenta  = '#c678dd',
-  blue     = '#61afef',
-  red      = '#e06c75',
+  bg       = '#24283b',
+  fg       = '#a9b1d6',
+  yellow   = '#e0af68',
+  cyan     = '#7dcfff',
+  darkblue = '#7aa2f7',
+  green    = '#9ece6a',
+  orange   = '#ff9e64',
+  violet   = '#bb9af7',
+  magenta  = '#bb9af7',
+  blue     = '#7aa2f7',
+  red      = '#f7768e',
 }
 
 local conditions = {

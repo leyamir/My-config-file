@@ -10,9 +10,9 @@ general {
   output_format = "i3bar"
   colors = true
   interval = 10
-  color_good = "#98C379"
-  color_degraded = "#E5C07B"
-  color_bad = "#E06C75"
+  color_good = "#9ECE6A"
+  color_degraded = "#E0AF68"
+  color_bad = "#F7768E"
   markup = pango
 }
 
@@ -26,17 +26,17 @@ volume master {
 	device = "default"
 	mixer = "Master"
 	mixer_idx = 0
-	format = "<span color='#61AFEF'></span> %volume  "
+	format = "<span color='#7aa2f7'></span> %volume  "
 	format_muted = "  muted (%volume)  "
 }
 
 wireless _first_ {
-	format_up = "  <span color='#61afef'></span>  <span color='#ABB2BF'>%essid</span>"
+	format_up = "  <span color='#7aa2f7'></span>  <span color='#a9b1d6'>%essid</span>"
 	format_down = " Disconnected"
 }
 
 battery all {
-        format = " <span color='#61AFEF'>%status</span> %percentage "
+        format = " <span color='#7aa2f7'>%status</span> %percentage "
         format_down = "No battery"
         last_full_capacity = true
         integer_battery_capacity = true
@@ -49,5 +49,5 @@ battery all {
 
 
 tztime local {
-        format = "  <span color='#61AFEF'></span> %I:%M  "
+        format = "  <span color='#7aa2f7'></span> %I:%M  "
 }
