@@ -16,9 +16,9 @@ general {
   markup = pango
 }
 
-order += "volume master"
 order += "battery all"
 order += "wireless _first_"
+order += "volume master"
 order += "tztime local"
 
 
@@ -26,8 +26,8 @@ volume master {
 	device = "default"
 	mixer = "Master"
 	mixer_idx = 0
-	format = "<span color='#7aa2f7'></span> %volume  "
-	format_muted = "  muted (%volume)  "
+	format = "  <span color='#7aa2f7'> </span> %volume"
+	format_muted = "   muted (%volume)"
 }
 
 wireless _first_ {
@@ -36,18 +36,18 @@ wireless _first_ {
 }
 
 battery all {
-        format = " <span color='#7aa2f7'>%status</span> %percentage "
+        format = " <span color='#7aa2f7'>%status</span> %percentage"
         format_down = "No battery"
         last_full_capacity = true
         integer_battery_capacity = true
 	status_chr = ""
-        status_bat = " "
-	status_full = " " 
+        status_bat = " "
+	status_full = "" 
         low_threshold = 25
         threshold_type = percentage
 }
 
 
 tztime local {
-        format = "  <span color='#7aa2f7'></span> %I:%M  "
+        format = "  <span color='#7aa2f7'> </span>%I:%M  "
 }
