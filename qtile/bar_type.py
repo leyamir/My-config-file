@@ -156,3 +156,55 @@ bar_two = [
         update_interval=120,
     ),
 ]
+
+bar_three = [
+    widget.TextBox(
+        text=' ',
+        padding=0.1,
+    ),
+    widget.Clock(
+        format="%d %a, %I:%M %p ",
+        background=color['black'],
+        foreground=color['ac'],
+        mouse_callbacks = {'Button1': lazy.spawn("alacritty -e calcurse")},
+    ),
+    widget.Prompt(
+        prompt='cmd: ',
+        fmt='{}',
+        foreground=color['dark_fg'],
+        cursor_color=color['dark_fg'],
+    ),
+    widget.Spacer(),
+    widget.GroupBox(
+        background=color['black'],
+        disable_drag=True,
+        highlight_method='line',
+        urgent_alert_method='text',
+        highlight_color=color['black'],
+        this_current_screen_border=color['fg'],
+        this_screen_border=color['fg'],
+        other_current_screen_border=color['fg'],
+        other_screen_border=color['fg'],
+        active=color['fg'],
+        inactive=color['dark_fg'],
+        urgent_text=color['fg'],
+        use_mouse_wheel=False,
+    ),
+    widget.Spacer(),
+    widget.Systray(
+        icon_size=30,
+    ),
+    widget.Wlan(
+        foreground=color['ac'],
+        background=color['black'],
+        format='   {essid} ',
+        update_interval=3,
+        mouse_callbacks = {'Button1': lazy.spawn("alacritty -e nmtui")},
+    ),
+    widget.Battery(
+        format='  {percent:2.0%} ',
+        foreground=color['ac'],
+        background=color['black'],
+        update_interval=120,
+    ),
+]
