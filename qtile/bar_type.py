@@ -137,7 +137,6 @@ bar_two = [
         format="%d %a, %I:%M %p ",
         background=color['black'],
         foreground=color['fg'],
-        mouse_callbacks = {'Button1': lazy.spawn("alacritty -e calcurse")},
     ),
     widget.Spacer(),
     widget.Systray(

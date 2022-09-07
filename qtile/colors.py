@@ -1,8 +1,8 @@
 color = {
-    'bg':           '#1F1F28',
-    'dark_bg':      '#16161D',
-    'fg':           '#DCD7BA',
-    'ac':           '#7AA89F',
-    'dark_fg':      '#727169',
+    'bg':           '#282828',
+    'dark_bg':      '#1d2021',
+    'fg':           '#ebdbb2',
+    'dark_fg':      '#7c6f64',
+    'ac':           '#689d6a',
     'black':        '#000000',
 }

@@ -9,14 +9,14 @@ call plug#begin()
 	Plug 'phaazon/hop.nvim'
     Plug 'karb94/neoscroll.nvim'
     Plug 'lukas-reineke/indent-blankline.nvim'
-    Plug 'rebelot/kanagawa.nvim'
+    Plug 'ellisonleao/gruvbox.nvim'
 call plug#end()
 
 lua require('_lsp')
 lua require('_nvimtree')
 lua require('_treesitter')
 lua require('_hop')
-lua require('_kanagawa')
+lua require('_gruvbox')
 lua require('_neoscroll')
 lua require('_indent')
 
