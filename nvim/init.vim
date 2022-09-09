@@ -4,17 +4,16 @@ call plug#begin()
 	Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 	Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 	Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-	Plug 'phaazon/hop.nvim'
     Plug 'karb94/neoscroll.nvim'
     Plug 'lukas-reineke/indent-blankline.nvim'
-    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'ellisonleao/gruvbox.nvim'
 call plug#end()
 
 lua require('_lsp')
 lua require('_treesitter')
-lua require('_hop')
 lua require('_neoscroll')
 lua require('_indent')
+lua require('_gruvbox')
  
 
 if has('termguicolors')
@@ -29,7 +28,6 @@ set nowrap
 set cursorline
 set nohlsearch
 set clipboard=unnamedplus "make everthing yank/delete auto copy to system clipboard
-colorscheme tokyonight-night
 
 let mapleader = " "
 inoremap jj <ESC>
@@ -37,10 +35,12 @@ noremap <Left> 0
 noremap <Right> $
 noremap <M-h> 0
 noremap <M-l> $
-noremap q :wq<CR>
-noremap <leader>h :HopLineStart<CR>
-noremap <leader>j :HopWordAC<CR>
-noremap <leader>k :HopWordBC<CR>
-noremap <leader>l :HopWordCurrentLine<CR>
+noremap <leader>q :q<CR>
+noremap <leader>w :w<CR>
+noremap <leader>e :e<space>
+noremap <leader>h 4b
+noremap <leader>j 4j
+noremap <leader>k 4k
+noremap <leader>l 4w
 
 autocmd VimLeave * set guicursor=a:hor20 " set terminal cursor shape to underline after exit neovim

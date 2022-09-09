@@ -110,14 +110,14 @@ bar_two = [
     widget.TextBox(
         text=' ',
         padding=0.1,
-        background=color['dark_bg'],
+        background=color['black'],
     ),
     widget.GroupBox(
-        background=color['dark_bg'],
+        background=color['black'],
         disable_drag=True,
         highlight_method='line',
         urgent_alert_method='text',
-        highlight_color=color['dark_bg'],
+        highlight_color=color['black'],
         this_current_screen_border=color['ac'],
         this_screen_border=color['ac'],
         other_current_screen_border=color['ac'],
@@ -136,20 +136,20 @@ bar_two = [
     widget.Spacer(),
     widget.Clock(
         format="%d %a, %I:%M %p",
-        background=color['dark_bg'],
+        background=color['black'],
         foreground=color['fg'],
     ),
     widget.Spacer(),
     widget.Wlan(
         foreground=color['ac'],
-        background=color['dark_bg'],
+        background=color['black'],
         format='      {essid} ',
         update_interval=3,
     ),
     widget.Battery(
         format='   {percent:2.0%}',
         foreground=color['ac'],
-        background=color['dark_bg'],
+        background=color['black'],
         show_short_text=False,
         update_interval=120,
     ),
@@ -159,7 +159,7 @@ bar_two = [
     widget.TextBox(
         text=' ',
         padding=0.1,
-        background=color['dark_bg'],
+        background=color['black'],
     ),
 ]
 

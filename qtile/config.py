@@ -76,13 +76,13 @@ mouse = [
 
 layouts = [
     layout.MonadTall(
-        border_focus=color['bd'],
+        border_focus=color['ac'],
         border_normal=color['bg'],
         border_width=1, 
         margin=8
     ),
     layout.MonadWide(
-        border_focus=color['bd'],
+        border_focus=color['ac'],
         border_normal=color['bg'],
         border_width=1, 
         margin=8
@@ -97,7 +97,7 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    Screen(top=bar.Bar(bar_type.bar_two, 48,)),
+    Screen(top=bar.Bar(bar_type.bar_two, 44)),
 ]
 
 dgroups_key_binder = None
@@ -106,7 +106,7 @@ follow_mouse_focus = True
 bring_front_click = False
 cursor_warp = False
 floating_layout = layout.Floating(
-    border_focus=color['bd'],
+    border_focus=color['ac'],
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
         *layout.Floating.default_float_rules,

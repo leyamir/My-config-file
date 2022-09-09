@@ -11,12 +11,12 @@ require('neoscroll').setup({
 
 local t = {}
 -- Syntax: t[keys] = {function, {function arguments}}
-t['<M-k>'] = {'scroll', {'-vim.wo.scroll', 'true', '80'}}
-t['<M-j>'] = {'scroll', { 'vim.wo.scroll', 'true', '80'}}
+t['<Up>'] = {'scroll', {'-vim.wo.scroll', 'true', '80'}}
+t['<Down>'] = {'scroll', { 'vim.wo.scroll', 'true', '80'}}
 t['<PageUp>'] = {'scroll', {'-vim.api.nvim_win_get_height(0)', 'true', '80'}}
 t['<PageDown>'] = {'scroll', { 'vim.api.nvim_win_get_height(0)', 'true', '80'}}
-t['<Up>'] = {'scroll', {'-4', 'true', '80'}}
-t['<Down>'] = {'scroll', { '4', 'true', '80'}}
+t['<M-k>'] = {'scroll', {'-4', 'true', '80'}}
+t['<M-j>'] = {'scroll', { '4', 'true', '80'}}
 t['zt']    = {'zt', {'80'}}
 t['zz']    = {'zz', {'80'}}
 t['zb']    = {'zb', {'80'}}
