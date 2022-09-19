@@ -9,12 +9,6 @@ import subprocess
 import bar_type
 
 
-@hook.subscribe.startup_once
-def autostart():
-    home = os.path.expanduser('~/.config/qtile/autostart.sh')
-    subprocess.run([home])
-
-
 mod = "mod4"
 terminal = guess_terminal()
 
@@ -35,21 +29,23 @@ keys = [
 
     Key([mod], "Tab", lazy.next_layout(), desc="Toggle between layouts"),
     Key([mod], "q", lazy.window.kill(), desc="Kill focused window"),
+    Key([mod], "m", lazy.window.toggle_fullscreen(), desc="Toggle fullscreen"),
+    Key([mod], "Escape", lazy.spawn("xsecurelock"), desc='Lock screen'),
 
     Key([mod], "Return", lazy.spawn(terminal), desc="Launch terminal"),
-    Key([mod], "r", lazy.spawncmd(), desc="Spawn a command using a prompt widget"),
+    Key(["control"], "space", lazy.spawn("rofi -show run"), desc="Spawn a command using a prompt widget"),
 
-    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer sset Master 5%+"), desc='Volume up'),
-    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer sset Master 5%-"), desc='Volume down'),
-    Key([], "XF86AudioMute", lazy.spawn("amixer sset Master toggle"), desc='Toggle volume'),
+    Key([], "XF86AudioRaiseVolume", lazy.spawn("amixer set Master 5%+"), desc='Volume up'),
+    Key([], "XF86AudioLowerVolume", lazy.spawn("amixer set Master 5%-"), desc='Volume down'),
+    Key([], "XF86AudioMute", lazy.spawn("amixer -D pulse set Master 1+ toggle"), desc='Toggle volume'),
     Key([], "XF86AudioMicMute", lazy.spawn("amixer sset Capture toggle"), desc='Toggle volume'),
-    Key([], "XF86MonBrightnessUp", lazy.spawn("light -A 5"), desc='Backlight up'),
-    Key([], "XF86MonBrightnessDown", lazy.spawn("light -U 5"), desc='Backlight down'),
-    Key([], "Print", lazy.spawn("xfce4-screenshooter -f"), desc='Screenshot'),
+    Key([], "XF86MonBrightnessUp", lazy.spawn("xbacklight -inc 5"), desc='Backlight up'),
+    Key([], "XF86MonBrightnessDown", lazy.spawn("xbacklight -dec 5"), desc='Backlight down'),
+    Key([], "Print", lazy.spawn("gnome-screenshot"), desc='Screenshot'),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
 ]
-groups = [Group(i) for i in "1234"]
+groups = [Group(i) for i in "12345678"]
 for i in groups:
     keys.extend(
         [
@@ -79,13 +75,13 @@ layouts = [
         border_focus=color['ac'],
         border_normal=color['bg'],
         border_width=1, 
-        margin=8
+        margin=8,
     ),
     layout.MonadWide(
         border_focus=color['ac'],
         border_normal=color['bg'],
         border_width=1, 
-        margin=8
+        margin=8,
     ),
 ]
 
@@ -97,7 +93,9 @@ widget_defaults = dict(
 extension_defaults = widget_defaults.copy()
 
 screens = [
-    Screen(top=bar.Bar(bar_type.bar_two, 44)),
+    Screen(
+        top=bar.Bar(bar_type.bar_four, 44),
+    ),
 ]
 
 dgroups_key_binder = None

@@ -47,7 +47,7 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 26
+    x: 22
     y: 8
 
   # Spread additional padding evenly around the terminal content.
@@ -122,7 +122,7 @@ font:
     family: JetBrains Mono Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    #style: Regular
+    style: Regular
 
   # Bold font face
   bold:
@@ -155,7 +155,7 @@ font:
     family: JetBrains Mono Nerd Font
 
     # The `style` can be specified to pick a specific face.
-    style: Bold Italic
+    #style: Bold Italic
 
   # Point size
   size: 13.0
@@ -183,41 +183,32 @@ font:
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
-
-# TokyoNight Alacritty Colors
+# Nightfox Alacritty Colors
+# Style: terafox
+# Upstream: https://github.com/edeneast/nightfox.nvim/raw/main/extra/terafox/nightfox_alacritty.yml
 colors:
-  # Default colors
   primary:
-    background: '#1d2021'
-    foreground: '#ebdbb2'
-
-  # Normal colors
+    background: '#2b3339'
+    foreground: '#d3c6aa'
   normal:
-    black:   '#282828'
-    red:     '#cc241d'
-    green:   '#98971a'
-    yellow:  '#d79921'
-    blue:    '#458588'
-    magenta: '#b16286'
-    cyan:    '#689d6a'
-    white:   '#a89984'
-
-  # Bright colors
+    black:   '#4b565c'
+    red:     '#e67e80'
+    green:   '#a7c080'
+    yellow:  '#dbbc7f'
+    blue:    '#7fbbb3'
+    magenta: '#d699b6'
+    cyan:    '#83c092'
+    white:   '#d3c6aa'
   bright:
-    black:   '#928374'
-    red:     '#fb4934'
-    green:   '#b8bb26'
-    yellow:  '#fabd2f'
-    blue:    '#83a598'
-    magenta: '#d3869b'
-    cyan:    '#8ec07c'
-    white:   '#ebdbb2'
-
-  indexed_colors:
-    - { index: 16, color: '#d65d0e' }
-    - { index: 17, color: '#fe8019' }
-
-# Bell
+    black:   '#4b565c'
+    red:     '#e67e80'
+    green:   '#a7c080'
+    yellow:  '#dbbc7f'
+    blue:    '#7fbbb3'
+    magenta: '#d699b6'
+    cyan:    '#83c092'
+    white:   '#d3c6aa'
+#Bell
 #
 # The bell is rung every time the BEL control character is received.
 #bell:
@@ -275,7 +266,7 @@ cursor:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Underline
+    shape: Beam
 
     # Cursor blinking state
     #

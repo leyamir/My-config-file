@@ -127,11 +127,15 @@ bar_two = [
         urgent_text=color['ac'],
         use_mouse_wheel=False,
     ),
+    widget.TextBox(
+        text=' ',
+        background=color['black'],
+    ),
     widget.Prompt(
         prompt='cmd: ',
         fmt='{}',
         foreground=color['dark_fg'],
-        cursor_color=color['dark_fg'],
+        cursor_color=color['black'],
     ),
     widget.Spacer(),
     widget.Clock(
@@ -143,11 +147,15 @@ bar_two = [
     widget.Wlan(
         foreground=color['ac'],
         background=color['black'],
-        format='      {essid} ',
+        format='  {essid}',
         update_interval=3,
     ),
+    widget.TextBox(
+        text=' ',
+        background=color['black'],
+    ),
     widget.Battery(
-        format='   {percent:2.0%}',
+        format='  {percent:2.0%}',
         foreground=color['ac'],
         background=color['black'],
         show_short_text=False,
@@ -211,5 +219,72 @@ bar_three = [
         foreground=color['ac'],
         background=color['dark_bg'],
         update_interval=120,
+    ),
+]
+bar_four = [
+    widget.TextBox(
+        text=' ',
+        padding=0.1,
+        background=color['black'],
+    ),
+    widget.GroupBox(
+        background=color['black'],
+        disable_drag=True,
+        highlight_method='line',
+        urgent_alert_method='text',
+        highlight_color=color['black'],
+        this_current_screen_border=color['ac'],
+        this_screen_border=color['ac'],
+        other_current_screen_border=color['ac'],
+        other_screen_border=color['ac'],
+        active=color['ac'],
+        inactive=color['dark_fg'],
+        urgent_text=color['ac'],
+        use_mouse_wheel=False,
+    ),
+    widget.TextBox(
+        text=' ',
+        background=color['black'],
+    ),
+    widget.WindowName(
+        background=color['black'],
+        foreground=color['ac'],
+        max_chars=26,
+        fmt='{}',
+        format='{name}',
+    ),
+    widget.Wlan(
+        foreground=color['ac'],
+        background=color['black'],
+        format='  {essid}',
+        update_interval=3,
+    ),
+    widget.TextBox(
+        text=' ',
+        background=color['black'],
+    ),
+    widget.Battery(
+        format='  {percent:2.0%}',
+        foreground=color['ac'],
+        background=color['black'],
+        show_short_text=False,
+        update_interval=120,
+    ),
+    widget.TextBox(
+        text=' ',
+        background=color['black'],
+    ),
+    widget.Clock(
+        format="  %d %a, %I:%M %p",
+        background=color['black'],
+        foreground=color['ac'],
+    ),
+    widget.Systray(
+        icon_size=30,
+    ),
+    widget.TextBox(
+        text=' ',
+        padding=0.1,
+        background=color['black'],
     ),
 ]
