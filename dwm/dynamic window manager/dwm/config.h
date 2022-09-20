@@ -11,7 +11,7 @@ static const int vertpadbar         = 12;        /* vertical padding for statusb
 static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12" };
 static const char dmenufont[]       = "JetBrains Mono Nerd Font:size=12";
 static const char norm_bg[]         = "#000000";
-static const char norm_fg[]         = "#53605c";
+static const char norm_fg[]         = "#d3c6aa";
 static const char sel_bg[]          = "#83c092";
 static const char sel_fg[]          = "#2b3339";
 static const char norm_bor[]        = "#2b3339";
